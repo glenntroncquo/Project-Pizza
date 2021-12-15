@@ -86,7 +86,7 @@ export default defineComponent({
 
         <header id="header" class="m-w-top">
           <h1 class="font-semibold text-5xl md:text-6xl animation1">
-            Newest, freshest and best pizza in
+            This is a crazy build
             <span class="text-red-500">Kortrijk</span>.
           </h1>
           <h2 class="font-medium text-2xl pt-10 animation1">
