@@ -83,7 +83,6 @@ export default defineComponent({
           alt=""
         />
         <!-- <Image source="src/assets/images/pizza-bg.png" /> -->
-
         <header id="header" class="m-w-top">
           <h1 class="font-semibold text-5xl md:text-6xl animation1">
             This is a crazy build
