@@ -23,5 +23,5 @@ jobs:
       - run: npm ci
       - name: Run Unit Tests
       - run: npm run test:unit
-      - name: Build our Vue app
-      - run: npm run build
+      # - name: Build our Vue app
+      # - run: npm run build
