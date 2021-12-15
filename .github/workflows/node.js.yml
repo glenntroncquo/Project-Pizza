@@ -22,5 +22,3 @@ jobs:
       - run: npm ci
       - run: npm run test:unit
       - run: npm run build
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.2
