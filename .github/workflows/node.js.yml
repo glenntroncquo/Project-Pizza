@@ -1,39 +1,30 @@
 # This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Vue.js CI
+name: Vue.js CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build_vue:
     runs-on: ubuntu-latest
-    name: Build Vue App
+    name: Run Tests Vue App
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 14.15
         uses: actions/setup-node@v1
-        with: 
+        with:
           node-version: 14.15
-      - run: npm i
+      - name: npm i to install everything
+      - run: npm ci
+      - name: Run our tests with npm run test:unit
       - run: npm run test:unit
 
-# jobs:
-#   build_and_deploy_job:
-#     name: Build and Deploy Job
-#     steps:
-#       - name: get latest updates
-#         run: sudo apt-get update
-#       - name: update to latest
-#         run: sudo apt-get install -y libgbm-dev
-#       - uses: actions/checkout@v2
-#       - name: Use Node.js 14.15
-#         uses: actions/setup-node@v1
-#         with:
-#           node-version: 14.15
-#       - run: npm i
-#       - run: npm run test
+    name: Build And Deploy Vue App
+    steps:
+      - name: Build our Vue app
+      - run: npm run build
