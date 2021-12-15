@@ -7,7 +7,7 @@ describe('Login.vue', () => {
 
     await wrapper.find('#email').setValue('')
     expect(wrapper.find('.input-error').text()).toMatch(
-      'This field is required',
+      'This field is required hello',
     )
   })
 
