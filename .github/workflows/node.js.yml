@@ -23,4 +23,3 @@ jobs:
       - run: npm run test:unit
       - run: npm run build
       - run: curl -X POST -d {} ${{ secrets.NETLIFY_HOOK}}
-      
