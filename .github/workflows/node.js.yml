@@ -12,19 +12,16 @@ on:
 jobs:
   build_vue:
     runs-on: ubuntu-latest
-    name: Run Tests Vue App
+    name: Run Vue App Through CI/CD Pipeline
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 14.15
         uses: actions/setup-node@v1
         with:
           node-version: 14.15
-      - name: npm i to install everything
+      - name: Install Dependencies
       - run: npm ci
-      - name: Run our tests with npm run test:unit
+      - name: Run Unit Tests
       - run: npm run test:unit
-
-    name: Build And Deploy Vue App
-    steps:
       - name: Build our Vue app
       - run: npm run build
